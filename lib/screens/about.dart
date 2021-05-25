@@ -14,8 +14,8 @@ class AboutScreen extends StatefulWidget {
 
 class AboutScreenState extends State<AboutScreen> {
   final String whatsAppNumber = "+263774671339";
-  final String website = "https://emarss.co.zw";
-  final String email = "info@emarss.co.zw";
+  final String website = "https://expressmarket.co.zw";
+  final String email = "info@expressmarket.co.zw";
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +68,11 @@ class AboutScreenState extends State<AboutScreen> {
                   color: whiteColor,
                 ),
                 title: Text(
-                  "Developer",
+                  "Developers",
                   style: whiteNormalText,
                 ),
                 subtitle: Text(
-                  'Emarss Technologies',
+                  'Emarss Technologies & Express Trade Marketing Company',
                   style: whiteNormalTextSmall,
                 ),
               ),
@@ -86,7 +86,7 @@ class AboutScreenState extends State<AboutScreen> {
                   style: whiteNormalText,
                 ),
                 subtitle: Text(
-                  'info@emarss.co.zw',
+                  'info@expressmarket.co.zw',
                   style: whiteNormalTextSmall,
                 ),
                 trailing: IconButton(
@@ -106,7 +106,7 @@ class AboutScreenState extends State<AboutScreen> {
                   style: whiteNormalText,
                 ),
                 subtitle: Text(
-                  'https://emarss.co.zw',
+                  'https://expressmarket.co.zw',
                   style: whiteNormalTextSmall,
                 ),
                 trailing: IconButton(
@@ -148,7 +148,12 @@ class AboutScreenState extends State<AboutScreen> {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      "Emarss Technologies is a Software Company in Zimbabwe, specializing in website development, mobile app development and other custom software solutions.",
+                      "Emarss Technologies is a software company in Zimbabwe, specializing in website development, mobile app development and other custom software solutions.",
+                      style: whiteNormalText,
+                    ),
+                    SizedBox(height: 12),
+                    Text(
+                      "Express Trade Africa is a marketing company in Zimbabwe, specialising in company branding, marketing, reputation, human resource planning, financial planning and management, product development, strategic initiatives, project Management, and business planning.",
                       style: whiteNormalText,
                     ),
                     SizedBox(height: 100),

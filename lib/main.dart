@@ -5,7 +5,7 @@ import 'package:alpha/screens/categories_show.dart';
 import 'package:alpha/screens/favourites.dart';
 import 'package:alpha/screens/help.dart';
 import 'package:alpha/screens/index.dart';
-import 'package:alpha/screens/item_show.dart';
+import 'package:alpha/screens/listing_show.dart';
 import 'package:alpha/screens/search.dart';
 import 'package:alpha/screens/submit_listing.dart';
 import 'package:alpha/screens/welcome.dart';
@@ -33,6 +33,16 @@ class MyApp extends StatelessWidget {
 
   ThemeData _themeData() {
     return ThemeData(
+      inputDecorationTheme: InputDecorationTheme(
+        labelStyle: TextStyle(
+            color: Colors.grey.shade700,
+            fontWeight: FontWeight.w500,
+            fontStyle: FontStyle.italic),
+        hintStyle: TextStyle(
+            color: Colors.grey.shade700,
+            fontWeight: FontWeight.w500,
+            fontStyle: FontStyle.italic),
+      ),
       primarySwatch: Colors.grey,
       fontFamily: "Lato",
       appBarTheme: AppBarTheme(
@@ -72,8 +82,8 @@ class MyApp extends StatelessWidget {
           screen = HelpScreen();
           break;
 
-        case ItemShowRoute:
-          screen = ItemShowScreen(
+        case ListingShowRoute:
+          screen = ListingShowScreen(
             listingUUID: arguments['listingUUID'],
           );
           break;

@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 Widget buildItemCard(BuildContext context, Listing listing) {
   return InkWell(
     onTap: () => Navigator.of(context)
-        .pushNamed(ItemShowRoute, arguments: {'listingUUID': listing.uuid}),
+        .pushNamed(ListingShowRoute, arguments: {'listingUUID': listing.uuid}),
     child: Card(
       // elevation: 4,
       margin: EdgeInsets.symmetric(horizontal: 8, vertical: 5),

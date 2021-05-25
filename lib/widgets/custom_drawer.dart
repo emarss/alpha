@@ -27,9 +27,13 @@ class CustomDrawer extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
-              Text(
-                "Developed by Emarss Technologies",
-                style: muteNormalTextSmall,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  "Express Trade Marketing Company & Emarss Technologies",
+                  style: muteNormalTextSmall,
+                  textAlign: TextAlign.center,
+                ),
               )
             ],
           ),

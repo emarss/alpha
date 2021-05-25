@@ -1,6 +1,6 @@
 const HomeRoute = "/";
 const WelcomeRoute = "/welcome";
-const ItemShowRoute = "/icon_show";
+const ListingShowRoute = "/icon_show";
 const SearchRoute = "/search";
 const CategoriesRoute = "/categories";
 const CategoriesShowRoute = "/categories_show";

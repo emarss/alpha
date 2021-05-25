@@ -4,6 +4,7 @@ import 'package:alpha/models/listing.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:sqflite/sqflite.dart';
+// ignore: unused_import
 import 'package:uuid/uuid.dart';
 
 String databaseName = 'database.db';
@@ -30,6 +31,7 @@ Future openOrCreateDatabase() async {
   databasePath = databasePath + databaseName;
 
   // await deleteDatabase(databasePath);
+  // print(DateTime.now().millisecondsSinceEpoch);
 
   db = await openDatabase(databasePath, version: 1,
       onCreate: (Database db, int version) async {

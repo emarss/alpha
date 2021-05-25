@@ -1,6 +1,7 @@
 import 'package:alpha/includes/widgets.dart';
 import 'package:alpha/models/listing.dart';
 import 'package:alpha/services/colors.dart';
+import 'package:alpha/services/globals.dart';
 import 'package:alpha/services/routes.dart';
 import 'package:alpha/services/styles.dart';
 import 'package:alpha/widgets/custom_drawer.dart';
@@ -50,7 +51,7 @@ class HomeScreenState extends State<HomeScreen> {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: Text("Find what's on the market",
+              child: Text("Buy, sell or get anything faster.",
                   style: TextStyle(
                       color: greyColor,
                       fontSize: 17,
@@ -79,6 +80,20 @@ class HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   SizedBox(width: 8),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).pushNamed(
+                        CategoriesShowRoute,
+                        arguments: {'category': 'Houses'}),
+                    child: Text("Houses",
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.blueGrey.shade700),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                    ),
+                  ),
+                  SizedBox(width: 5),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).pushNamed(
                         CategoriesShowRoute,
@@ -124,8 +139,8 @@ class HomeScreenState extends State<HomeScreen> {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).pushNamed(
                         CategoriesShowRoute,
-                        arguments: {'category': 'Phones'}),
-                    child: Text("Phones",
+                        arguments: {'category': 'Properties'}),
+                    child: Text("Properties",
                         style: TextStyle(fontWeight: FontWeight.w700)),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -152,8 +167,64 @@ class HomeScreenState extends State<HomeScreen> {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).pushNamed(
                         CategoriesShowRoute,
-                        arguments: {'category': 'Music'}),
-                    child: Text("Music",
+                        arguments: {'category': 'Implements'}),
+                    child: Text("Implements",
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.blueGrey.shade700),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).pushNamed(
+                        CategoriesShowRoute,
+                        arguments: {'category': 'Services'}),
+                    child: Text("Services",
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.blueGrey.shade700),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).pushNamed(
+                        CategoriesShowRoute,
+                        arguments: {'category': 'Arts'}),
+                    child: Text("Arts",
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.blueGrey.shade700),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).pushNamed(
+                        CategoriesShowRoute,
+                        arguments: {'category': 'Wanted List'}),
+                    child: Text("Wanted List",
+                        style: TextStyle(fontWeight: FontWeight.w700)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.blueGrey.shade700),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).pushNamed(
+                        CategoriesShowRoute,
+                        arguments: {'category': 'Other'}),
+                    child: Text("Other",
                         style: TextStyle(fontWeight: FontWeight.w700)),
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -199,8 +270,6 @@ class HomeScreenState extends State<HomeScreen> {
   }
 
   shareListing() {
-    String info =
-        "\n\n\nGet the Express Market app today to get up-to-date information on products, jobs and any other service on the market in Zimbabwe today. \nhttps://expressmarket.co.zw";
-    Share.share(info);
+    Share.share(getAppInfo);
   }
 }

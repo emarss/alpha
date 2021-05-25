@@ -129,6 +129,16 @@ class ListingProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> deleteOldListings() async {
+    int sevenDaysTimestamp =
+        DateTime.now().millisecondsSinceEpoch - (7 * 24 * 60 * 60 * 1000);
+    await db.delete(tableListings,
+        where: "$columnCreatedAt < ? AND $columnIsFavourite != ?",
+        whereArgs: [sevenDaysTimestamp, 1]);
+
+    getAllListings();
+  }
+
   // Future<void> delete(String uuid) async {
   //   await db.delete(tableListings, where: '$columnUUID = ?', whereArgs: [uuid]);
   // }

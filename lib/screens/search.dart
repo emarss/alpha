@@ -110,10 +110,17 @@ class SearchScreenState extends State<SearchScreen> {
                                             },
                                             items: [
                                               "All Categories",
+                                              "Houses",
+                                              "Cars",
+                                              "Properties",
                                               "Gadgets",
                                               "Clothes",
+                                              "Implements",
+                                              "Services",
                                               "Jobs",
-                                              "Cars",
+                                              "Arts",
+                                              "Wanted List",
+                                              "Other",
                                             ].map<DropdownMenuItem<String>>(
                                                 (String value) {
                                               return DropdownMenuItem<String>(

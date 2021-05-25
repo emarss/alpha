@@ -29,6 +29,24 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
                           CategoriesShowRoute,
+                          arguments: {'category': 'Houses'}),
+                      child: Text("Houses",
+                          style: TextStyle(fontWeight: FontWeight.w700)),
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.symmetric(vertical: 16)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.blueGrey.shade700),
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.of(context).pushNamed(
+                          CategoriesShowRoute,
                           arguments: {'category': 'Clothes'}),
                       child: Text("Clothes",
                           style: TextStyle(fontWeight: FontWeight.w700)),
@@ -42,7 +60,11 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                ],
+              ),
+              SizedBox(height: 8),
+              Row(
+                children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
@@ -60,11 +82,7 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: 8),
-              Row(
-                children: [
+                  SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
@@ -82,13 +100,17 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                ],
+              ),
+              SizedBox(height: 8),
+              Row(
+                children: [
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
                           CategoriesShowRoute,
-                          arguments: {'category': 'Phones'}),
-                      child: Text("Phones",
+                          arguments: {'category': 'Properties'}),
+                      child: Text("Properties",
                           style: TextStyle(fontWeight: FontWeight.w700)),
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(
@@ -100,11 +122,7 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: 8),
-              Row(
-                children: [
+                  SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
@@ -122,13 +140,35 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                       ),
                     ),
                   ),
+                ],
+              ),
+              SizedBox(height: 8),
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.of(context).pushNamed(
+                          CategoriesShowRoute,
+                          arguments: {'category': 'Implements'}),
+                      child: Text("Implements",
+                          style: TextStyle(fontWeight: FontWeight.w700)),
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.symmetric(vertical: 16)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.blueGrey.shade700),
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                      ),
+                    ),
+                  ),
                   SizedBox(width: 8),
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
                           CategoriesShowRoute,
-                          arguments: {'category': 'Music'}),
-                      child: Text("Music",
+                          arguments: {'category': 'Services'}),
+                      child: Text("Services",
                           style: TextStyle(fontWeight: FontWeight.w700)),
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(
@@ -149,8 +189,8 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
                           CategoriesShowRoute,
-                          arguments: {'category': 'Clothes'}),
-                      child: Text("Clothes",
+                          arguments: {'category': 'Arts'}),
+                      child: Text("Arts",
                           style: TextStyle(fontWeight: FontWeight.w700)),
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(
@@ -167,8 +207,8 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).pushNamed(
                           CategoriesShowRoute,
-                          arguments: {'category': 'Gadgets'}),
-                      child: Text("Gadgets",
+                          arguments: {'category': 'Wanted List'}),
+                      child: Text("Wanted List",
                           style: TextStyle(fontWeight: FontWeight.w700)),
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(
@@ -179,6 +219,32 @@ class CategoriesScreenState extends State<CategoriesScreen> {
                             MaterialStateProperty.all<Color>(Colors.white),
                       ),
                     ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 8),
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => Navigator.of(context).pushNamed(
+                          CategoriesShowRoute,
+                          arguments: {'category': 'Other'}),
+                      child: Text("Other",
+                          style: TextStyle(fontWeight: FontWeight.w700)),
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all(
+                            EdgeInsets.symmetric(vertical: 16)),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.blueGrey.shade700),
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                  Expanded(
+                    child: SizedBox(),
                   ),
                 ],
               ),

@@ -14,8 +14,9 @@ Future<bool> applicationStarter(BuildContext context) async {
   await Provider.of<ListingProvider>(context, listen: false).getAllListings();
   await readDataFromDatabaseFiles(context);
 
-  //refetching records after insertions
-  await Provider.of<ListingProvider>(context, listen: false).getAllListings();
+  //deleting old records after insertions
+  await Provider.of<ListingProvider>(context, listen: false)
+      .deleteOldListings();
   return true;
 }
 
@@ -26,7 +27,6 @@ Future<bool> readDataFromDatabaseFiles(BuildContext context) async {
   }
 
   if (status.isDenied) {
-    print("showing dialog");
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -82,10 +82,8 @@ Future<bool> readDataFromDatabaseFiles(BuildContext context) async {
                 String filePath = mediaAppFolder.path + "/" + fileName;
                 if (File(filePath).existsSync()) {
                   File file = File(filePath);
-
-                  print("file found");
                   String contents = await file.readAsString();
-                  populateDatabase(contents, context);
+                  await populateDatabase(contents, context);
                 }
               }
             }

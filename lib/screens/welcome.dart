@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:alpha/services/colors.dart';
-import 'package:alpha/services/core.dart';
 import 'package:alpha/services/routes.dart';
 import 'package:alpha/services/styles.dart';
 import 'package:flutter/material.dart';
@@ -15,18 +12,6 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class WelcomeScreenState extends State<WelcomeScreen> {
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    checkDatabaseFileExist();
-  }
-
-  checkDatabaseFileExist() {
-    Timer.periodic(new Duration(seconds: 5), (timer) async {
-      await readDataFromDatabaseFiles(context);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final String whatsAppNumber = "+263774671339";
