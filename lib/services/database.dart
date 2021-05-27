@@ -77,12 +77,12 @@ Future openOrCreateDatabase() async {
 Future<void> populateDatabase(dataFromFile, BuildContext context) async {
   ListingProvider listingProvider =
       Provider.of<ListingProvider>(context, listen: false);
+  // print(dataFromFile);
   //Encrypting data
   final key = encrypt.Key.fromUtf8(encryptionKey);
   final iv = encrypt.IV.fromLength(16);
   final encrypter = encrypt.Encrypter(encrypt.AES(key));
-  final String decryptedData = encrypter.decrypt(dataFromFile, iv: iv);
-  // print(decryptedData);
+  final String decryptedData = encrypter.decrypt64(dataFromFile, iv: iv);
   var data = json.decode(decryptedData);
   if (data.length > 0) {
     for (int i = 0; i < data.length; i++) {
