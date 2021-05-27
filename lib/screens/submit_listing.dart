@@ -184,7 +184,7 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
               SizedBox(height: 12),
               TextFormField(
                 controller: _sellerDetailsFieldController,
-                textCapitalization: TextCapitalization.words,
+                textCapitalization: TextCapitalization.sentences,
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Required Field';
@@ -236,6 +236,9 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
                 child: InternationalPhoneNumberInput(
                   onInputChanged: (PhoneNumber number) {
                     _whatsAppNumber = number.phoneNumber;
+                    if (number.phoneNumber == _dialCode) {
+                      _whatsAppNumber = "";
+                    }
                   },
                   selectorConfig: SelectorConfig(
                     selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
@@ -332,14 +335,14 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
           "_" +
           DateTime.now().month.toString() +
           "_" +
-          DateTime.now().day.toString();
-      String filePath = "$path/$fileName.emlf";
+          DateTime.now().day.toString() +
+          ".emlf";
+      String filePath = "$path/$fileName";
       final File file = File(filePath);
       await file.writeAsString(jsonEncode(info));
 
       await Share.shareFiles([filePath],
-          text: "$fileName.json",
-          subject: "Express Market Listing Submission.");
+          text: "$fileName", subject: "Express Market Listing Submission.");
     }
   }
 
