@@ -43,7 +43,7 @@ class HelpScreenState extends State<HelpScreen> {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      "The Welcome Screen is shown when you open the app for the first time. \n\nIf you are not opening the app for the first time and you keep seeing the Welcome Screen, this means that you have not yet received a database file from our team, even once. \n\nTo get the database file, read the section below. \n\nIf you have received the database file and you are still seeing the Welcome Screen, please, contact us by clicking the buttons near the bottom of this page.",
+                      "The Welcome screen is normally shown when you open this app for the first time. \n\nIf you are not opening the app for the first time, but you keep seeing the Welcome screen, this might mean that you have not yet received a database file from our WhatsApp group or number within the past 7 days. You see the Welcome screen when the app has no data to show you. \n\nTo get the data, you can contact us by clicking the subscribe button on the Welcome Screen. \n\nIf you have just received the database file, but you are still seeing the Welcome screen, please, contact us.",
                       style: greyNormalText,
                       textAlign: TextAlign.justify,
                     ),
@@ -56,25 +56,7 @@ class HelpScreenState extends State<HelpScreen> {
               ),
               SizedBox(height: 12),
               Text(
-                "To use the Express Market app, firstly, you should have WhatsApp, WhatsApp Business, GBWhatsApp or FMWhatsApp installed on your device.",
-                style: greyNormalText,
-                textAlign: TextAlign.justify,
-              ),
-              SizedBox(height: 12),
-              Text(
-                "The next thing will be to subscribe to our WhatsApp platform and you will be added to our groups.",
-                style: greyNormalText,
-                textAlign: TextAlign.justify,
-              ),
-              SizedBox(height: 12),
-              Text(
-                "A small database file will be sent to the WhatsApp groups once or twice every day. If your WhatsApp is not set to auto-download documents, all you will have to do is to open the WhatsApp group and click the database file to download it. Do not attempt to open the file, just download it, and you are done.",
-                style: greyNormalText,
-                textAlign: TextAlign.justify,
-              ),
-              SizedBox(height: 12),
-              Text(
-                "When you close your WhatsApp, if you open the Express Market app, it will automatically read the latest information from the database file you just downloaded.",
+                "To use the Express Market app, firstly, you should have WhatsApp installed on your device. \n\nThe next thing will be to subscribe to our WhatsApp platform and you will be added to our groups. A small database file will be sent to the WhatsApp groups twice every day, in the morning and the evening.  If you download this file and open it using the Express Market app, the app will show you all the latest listings. \n\nHowever, even if you do not open the file, and just download it, when you open the app, it will automatically read data from the file and listings will be updated.",
                 style: greyNormalText,
                 textAlign: TextAlign.justify,
               ),
@@ -85,7 +67,29 @@ class HelpScreenState extends State<HelpScreen> {
               ),
               SizedBox(height: 12),
               Text(
-                "To submit the products you are selling or services you are offering for listing to more than 10 000 users of the Express Market app, contact us via WhatsApp on 0774671339 or visit the Express Market website on https://expressmarket.co.zw.",
+                "To submit the products you are selling or services you are offering for listing to thousands of the Express Market app, click the plus sign at the top of the Home screen of the app. \n\nFill out the form on the screen and press the submit button. You will be prompted to share a file that ends with .emlf. Go ahead and share the file to the Express Market WhatsApp number : ",
+                style: greyNormalText,
+                textAlign: TextAlign.justify,
+              ),
+              SizedBox(height: 24),
+              Text(
+                "Do I pay to submit a listing?",
+                style: greySemiBoldTexth2,
+              ),
+              SizedBox(height: 12),
+              Text(
+                "Listing a product or service on the Express Market app is free. \n\nHowever, to get a priority listing, and have your product or service appear at the top of other listings, contact us now to get the information on current prices. ",
+                style: greyNormalText,
+                textAlign: TextAlign.justify,
+              ),
+              SizedBox(height: 24),
+              Text(
+                "Have more questions?",
+                style: greySemiBoldTexth2,
+              ),
+              SizedBox(height: 12),
+              Text(
+                "If you would like to ask more questions about the Express Market app, contact us by clicking the button below.",
                 style: greyNormalText,
                 textAlign: TextAlign.justify,
               ),
@@ -105,47 +109,41 @@ class HelpScreenState extends State<HelpScreen> {
                                 MaterialStateProperty.all(primaryColor),
                             foregroundColor:
                                 MaterialStateProperty.all(whiteColor)))),
-                SizedBox(width: 5),
-                Expanded(
-                    child: ElevatedButton.icon(
-                        icon: FaIcon(FontAwesomeIcons.internetExplorer),
-                        label: Text("Go to Website"),
-                        onPressed: () {
-                          launch("$website");
-                        },
-                        style: ButtonStyle(
-                            padding: MaterialStateProperty.all(
-                                EdgeInsets.symmetric(vertical: 12)),
-                            backgroundColor:
-                                MaterialStateProperty.all(primaryColor),
-                            foregroundColor:
-                                MaterialStateProperty.all(whiteColor)))),
+                // SizedBox(width: 5),
+                //      Expanded(
+                //     child: ElevatedButton.icon(
+                //         icon: FaIcon(FontAwesomeIcons.internetExplorer),
+                //         label: Text("Go to Website"),
+                //         onPressed: () {
+                //           launch("$website");
+                //         },
+                //         style: ButtonStyle(
+                //             padding: MaterialStateProperty.all(
+                //                 EdgeInsets.symmetric(vertical: 12)),
+                //             backgroundColor:
+                //                 MaterialStateProperty.all(primaryColor),
+                //             foregroundColor:
+                //                 MaterialStateProperty.all(whiteColor)))),
               ]),
               SizedBox(height: 24),
               Text(
-                "Do I pay to submit a listing?",
+                "What are the advantages of using the Express Market App?",
                 style: greySemiBoldTexth2,
               ),
               SizedBox(height: 12),
               Text(
-                "Submitting a product or a service for listing on the website is free. However, if you want your listing to appear on the first page or at the top of the results, then you will have to pay a fee that is determined by our advertising team. ",
-                style: greyNormalText,
-                textAlign: TextAlign.justify,
-              ),
-              SizedBox(height: 12),
-              Text(
-                "To find out more about sponsored (paid) listings, contact us using the links above.",
+                "The Express Market app allows you to sell, buy or get any service very fast in Zimbabwe, without internet access. All you need is your WhatsApp and you get all the information of thousands of people offering different products and services. \n\nYou will be able to quickly search and filter the listings by category. \n\nAnother advantage of the Express Market App is that listings are automatically deleted after every 7 days. This means you are almost certain that a product you have seen listed is still in stock because it was recently listed.",
                 style: greyNormalText,
                 textAlign: TextAlign.justify,
               ),
               SizedBox(height: 24),
               Text(
-                "Have more questions?",
+                "For how long does a listing stay on the app?",
                 style: greySemiBoldTexth2,
               ),
               SizedBox(height: 12),
               Text(
-                "If you would like to ask more questions about the Express Market app, contact us by clicking the buttons above.",
+                "To ensure that a listing does not stay on the app long after the product has been sold, every listing is deleted after every 7 days.",
                 style: greyNormalText,
                 textAlign: TextAlign.justify,
               ),

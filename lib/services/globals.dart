@@ -30,3 +30,5 @@ showMessageBox(BuildContext context, String message,
     ],
   ).show();
 }
+
+String encryptionKey = "CarterChechaEmarssRufaroUbuntu04";

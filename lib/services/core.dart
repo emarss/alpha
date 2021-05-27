@@ -78,12 +78,15 @@ Future<bool> readDataFromDatabaseFiles(BuildContext context) async {
               in Directory(whatsAppFolder.path).listSync()) {
             if (mediaAppFolder.path.contains("Document")) {
               List<String> fileNames = getFileNames();
-              for (String fileName in fileNames) {
-                String filePath = mediaAppFolder.path + "/" + fileName;
-                if (File(filePath).existsSync()) {
-                  File file = File(filePath);
-                  String contents = await file.readAsString();
-                  await populateDatabase(contents, context);
+              for (var document in Directory(mediaAppFolder.path).listSync()) {
+                if (document.path.endsWith(".emdf")) {
+                  for (String fileName in fileNames) {
+                    if (document.path.contains(fileName)) {
+                      File file = File(document.path);
+                      String contents = await file.readAsString();
+                      await populateDatabase(contents, context);
+                    }
+                  }
                 }
               }
             }
@@ -104,7 +107,6 @@ List<String> getFileNames() {
     fileName = fileName + "_" + currentDay.year.toString();
     fileName = fileName + "_" + currentDay.month.toString();
     fileName = fileName + "_" + currentDay.day.toString();
-    fileName = fileName + ".emdf";
     fileNames.add(fileName);
     currentTimeStamp = currentTimeStamp - 24 * 60 * 60 * 1000;
   }

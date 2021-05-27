@@ -5,6 +5,7 @@ import 'package:alpha/services/colors.dart';
 import 'package:alpha/services/database.dart';
 import 'package:alpha/services/globals.dart';
 import 'package:alpha/services/styles.dart';
+import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
@@ -110,7 +111,7 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
               SizedBox(height: 15.0),
               TextFormField(
                 controller: _descriptionFieldController,
-                textCapitalization: TextCapitalization.words,
+                textCapitalization: TextCapitalization.sentences,
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Required Field';
@@ -130,14 +131,13 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
               SizedBox(height: 15.0),
               TextFormField(
                 controller: _priceFieldController,
-                textCapitalization: TextCapitalization.words,
+                textCapitalization: TextCapitalization.characters,
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'Required Field';
                   }
                   return null;
                 },
-                keyboardType: TextInputType.numberWithOptions(),
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   filled: true,
@@ -339,7 +339,16 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
           ".emlf";
       String filePath = "$path/$fileName";
       final File file = File(filePath);
-      await file.writeAsString(jsonEncode(info));
+
+      //Encrypting data
+      final key = encrypt.Key.fromUtf8(encryptionKey);
+      final iv = encrypt.IV.fromLength(16);
+
+      final encrypter = encrypt.Encrypter(encrypt.AES(key));
+
+      final String encryptedData =
+          encrypter.encrypt(jsonEncode(info), iv: iv).base64;
+      await file.writeAsString(encryptedData);
 
       await Share.shareFiles([filePath],
           text: "$fileName", subject: "Express Market Listing Submission.");
@@ -355,7 +364,7 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                      "Fill out the form below and press the submit button to send your listing to the Express Market number. \n\nIf you have not yet saved the our number, click the button below to save."),
+                      "Fill out the form below and press the submit button to send your listing to the Express Market WhatsApp number. \n\nIf you have not yet saved our number, click the button below to save."),
                   SizedBox(
                     height: 40,
                   ),

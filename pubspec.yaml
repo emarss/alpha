@@ -42,6 +42,7 @@ dependencies:
   smart_select: ^4.3.2
   intl_phone_number_input: ^0.7.0+2
   rflutter_alert: ^2.0.2
+  encrypt: ^4.1.0
 
 dev_dependencies:
   flutter_test:

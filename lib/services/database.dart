@@ -1,5 +1,6 @@
 import 'dart:convert';
-
+import 'package:alpha/services/globals.dart';
+import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:alpha/models/listing.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -76,7 +77,13 @@ Future openOrCreateDatabase() async {
 Future<void> populateDatabase(dataFromFile, BuildContext context) async {
   ListingProvider listingProvider =
       Provider.of<ListingProvider>(context, listen: false);
-  var data = json.decode(dataFromFile);
+  //Encrypting data
+  final key = encrypt.Key.fromUtf8(encryptionKey);
+  final iv = encrypt.IV.fromLength(16);
+  final encrypter = encrypt.Encrypter(encrypt.AES(key));
+  final String decryptedData = encrypter.decrypt(dataFromFile, iv: iv);
+  // print(decryptedData);
+  var data = json.decode(decryptedData);
   if (data.length > 0) {
     for (int i = 0; i < data.length; i++) {
       var record = data[i];
