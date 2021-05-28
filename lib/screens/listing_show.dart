@@ -242,8 +242,8 @@ class ListingShowScreenState extends State<ListingShowScreen> {
                     onPressed: () {
                       launch(listing.whatsAppBusinessLink);
                     },
-                    label: Text("VIEW CATALOGUE"),
-                    icon: FaIcon(FontAwesomeIcons.whatsapp),
+                    label: Text("OPEN LINK"),
+                    icon: FaIcon(FontAwesomeIcons.link),
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all(
                           EdgeInsets.symmetric(vertical: 12)),

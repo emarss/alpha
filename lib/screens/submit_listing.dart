@@ -262,7 +262,7 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
               ),
               SizedBox(height: 35.0),
               Text(
-                "WhatsApp Business",
+                "More Information",
                 style: greyBoldText,
               ),
               SizedBox(height: 12),
@@ -273,7 +273,7 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
                   filled: true,
                   fillColor: whiteColor,
                   prefixIcon: Icon(Icons.link, color: primaryColor),
-                  hintText: 'Catalog Link (Optional)',
+                  hintText: 'Website/WhatsApp Link (Optional)',
                 ),
               ),
               Divider(height: 15.0),
