@@ -359,7 +359,7 @@ class SubmitListingScreenState extends State<SubmitListingScreen> {
     showDialog(
         context: context,
         builder: (_) => AlertDialog(
-              title: Text("Alert"),
+              title: Text("Info"),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
