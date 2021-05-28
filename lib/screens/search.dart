@@ -170,7 +170,7 @@ class SearchScreenState extends State<SearchScreen> {
                       ),
                     )
                   : SizedBox(
-                      height: (150 * listingsList.length).toDouble(),
+                      height: MediaQuery.of(context).size.height - 200,
                       child: ListView(
                           padding: EdgeInsets.only(bottom: 8),
                           physics: BouncingScrollPhysics(
