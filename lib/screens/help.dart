@@ -78,7 +78,7 @@ class HelpScreenState extends State<HelpScreen> {
               ),
               SizedBox(height: 12),
               Text(
-                "Listing a product or service on the Express Market app is free. \n\nHowever, to get a priority listing, and have your product or service appear at the top of other listings, contact us now to get the information on current prices. ",
+                "Click the button below to contact our Support team now and get more information on the current pricing for listing on the Express Market App.",
                 style: greyNormalText,
                 textAlign: TextAlign.justify,
               ),

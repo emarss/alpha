@@ -153,7 +153,7 @@ class AboutScreenState extends State<AboutScreen> {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      "Express Trade Africa is a marketing company in Zimbabwe, specialising in company branding, marketing, reputation, human resource planning, financial planning and management, product development, strategic initiatives, project Management, and business planning.",
+                      "Express Trade Marketing  Company is a marketing company in Zimbabwe, specialising in company branding, marketing, reputation, human resource planning, financial planning and management, product development, strategic initiatives, project Management, and business planning.",
                       style: whiteNormalText,
                     ),
                     SizedBox(height: 100),
